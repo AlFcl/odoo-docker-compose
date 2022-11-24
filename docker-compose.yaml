@@ -19,7 +19,8 @@ services:
       - HOST=postgres
       - USER=${DB_USER:-odoo}
       - PASSWORD=${DB_PASSWORD}
-
+    networks:
+      - glnetwork_default
   postgres:
     container_name: postgres_${PROJECT}
     image: postgres:alpine
@@ -31,6 +32,10 @@ services:
       - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
       - /data/${PROJECT}:/var/lib/postgresql/data/pgdata
-
+    networks:
+      - glnetwork_default
 volumes:
   postgres: {}
+networks:
+    glnetwork_default:
+        external: true

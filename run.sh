@@ -5,8 +5,11 @@ while true; do
   read -p "Nombre del proyecto [quickstart]: " PROJECT
 
   if [ "$PROJECT" != "" ]; then
-    git clone https://gitlab.com/sre_resource/docker/odoo-docker-compose.git $PROJECT
+    git clone https://gitlab.com/gloyolacl/odoo-docker-compose.git $PROJECT
     cd $PROJECT
+
+
+
     echo "PROJECT=$PROJECT" >> .env
     break
   fi
