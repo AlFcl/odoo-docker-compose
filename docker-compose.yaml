@@ -31,7 +31,7 @@ services:
       - POSTGRES_USER=${DB_USER:-odoo}
       - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
-      - /data/${PROJECT}:/var/lib/postgresql/data/pgdata
+      - ./data/${PROJECT}:/var/lib/postgresql/data/pgdata
     networks:
       - glnetwork_default
 volumes:
